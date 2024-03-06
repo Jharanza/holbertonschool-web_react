@@ -14,6 +14,7 @@
     "css": "^3.0.0",
     "css-loader": "^6.10.0",
     "file-loader": "^6.2.0",
+    "image-webpack-loader": "^8.1.0",
     "style": "^0.0.3",
     "style-loader": "^3.3.4",
     "webpack": "^5.90.3",
