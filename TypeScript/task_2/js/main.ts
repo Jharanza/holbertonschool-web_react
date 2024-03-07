@@ -42,3 +42,24 @@ function createEmployee(salary: number | string): Director | Teacher {
   if (typeof salary === 'number' && salary < 500) return new Teacher();
   else return new Director();
 }
+
+function isDirector(employee: Teacher | Director): employee is Director {
+  return employee instanceof Director;
+}
+
+function executeWork(employee: Director | Teacher ) {
+  if (isDirector(employee)) {
+    const director = new Director();
+    const taskDirector = director.workDirectorTasks();
+
+    console.log(taskDirector);
+  } else {
+    const teacher = new Teacher();
+    const taskTeacher = teacher.workTeacherTasks();
+
+    console.log(taskTeacher)
+  }
+}
+
+executeWork(createEmployee(200));
+executeWork(createEmployee(1000));
