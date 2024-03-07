@@ -61,5 +61,6 @@ function executeWork(employee: Director | Teacher ) {
   }
 }
 
-executeWork(createEmployee(200));
-executeWork(createEmployee(1000));
+type Subjects = 'Math' | 'History';
+
+const teachClass = (todayClass: Subjects) => todayClass === 'Math' ? 'Teaching Math' : 'Teaching History';
