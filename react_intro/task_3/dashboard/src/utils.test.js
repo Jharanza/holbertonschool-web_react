@@ -1,31 +1,32 @@
 import { getFullYear, getFooterCopy, getLatestNotification } from './utils';
 
-test('getFullYear function returns a string year', () => {
-    const yearExpected = new Date().getFullYear().toString();
-    const yearFunction = getFullYear();
+test('getFullYear function returns current year', () => {
+    const year = new Date().getFullYear().toString();
+    const functionYear = getFullYear();
 
-    expect(yearFunction).toBe(yearExpected);
+    expect(functionYear).toBe(year);
 });
 
-test('getFooterCopy return a string with the text Holberton School if true', () => {
+test('getFooterCopy function returns Holberton School if isIndex is true', () => {
     const isIndex = true;
-    const stringExpected = 'Holberton School';
-    const stringFunction = getFooterCopy(isIndex);
+    const string = 'Holberton School';
+    const functionString = getFooterCopy(isIndex);
 
-    expect(stringFunction).toBe(stringExpected);
+    expect(functionString).toBe(string);
 });
 
-test('getFooterCopy return a string with the text Holberton School main dashboard', () => {
+test('getFooterCopy function returns Holberton School main dashboard if isIndex is false', () => {
     const isIndex = false;
-    const stringExpected = 'Holberton School main dashboard';
-    const stringFunction = getFooterCopy(isIndex);
+    const string = 'Holberton School main dashboard';
+    const functionString = getFooterCopy(isIndex);
 
-    expect(stringFunction).toBe(stringExpected);
+    expect(functionString).toBe(string);
 });
 
-test('getLatestNotification function returns "<strong>Urgent requirement</strong> - complete by EOD"', () => {
-    const stringExpected = '<strong>Urgent requirement</strong> - complete by EOD';
-    const stringFunction = getLatestNotification();
+test('getLatestNotification function returns <strong>Urgent requirement</strong> - complete by EOD', () => {
+    const string = '<strong>Urgent requirement</strong> - complete by EOD';
+    const functionHtml = getLatestNotification();
 
-    expect(stringFunction).toBe(stringExpected);
-});
+    expect(functionHtml).toBe(string)
+})
+

@@ -1,9 +1,9 @@
 .Notifications {
-    border: 1px dotted red;
     padding: auto;
+    border: 1px dotted red;
 }
 
-button img {
+.Notifications img {
     height: 10px;
     width: 10px;
 }
