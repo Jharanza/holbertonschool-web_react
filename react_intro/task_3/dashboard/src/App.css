@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  border: 0px;
+  padding: 0px;
+  display: block;
+}
+
+.App {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.App-logo {
+  height: 15vmax;
+}
+
+.App-header {
+  color: red;
+  display: flex;
+  align-items: center;
+  flex: 0 1 20%;
+}
+
+.App-body {
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid red;
+  border-bottom: 2px solid red;
+  padding: 40px;
+  flex: 1 1 70%;
+}
+
+label {
+  display: inline;
+  height: 20px;
+  margin-right: 15px;
+}
+
+input {
+  display: inline;
+  height: 20px;
+  margin-right: 15px;
+}
+
+button {
+  height: 20px;
+}
+
+.App-footer {
+  display: block;
+  text-align: center;
+}
