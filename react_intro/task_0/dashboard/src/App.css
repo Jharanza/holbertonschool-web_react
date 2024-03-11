@@ -1,39 +1,32 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  border: 0px;
-  padding: 0px;
-  display: block;
-}
-
 .App {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 .App-logo {
-  height: 15vmax;
+  max-height: 30vmin;
 }
 
+
 .App-header {
-  color: red;
   display: flex;
   align-items: center;
+  color: red;
   flex: 0 1 20%;
 }
 
 .App-body {
   display: flex;
+  flex: 1 1 65%;
+  padding: 50px 0px 0px 50px;
   border-top: 2px solid red;
   border-bottom: 2px solid red;
-  padding: 40px;
-  flex: 1 1 70%;
 }
 
 .App-footer {
-  display: block;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 15%;
 }
