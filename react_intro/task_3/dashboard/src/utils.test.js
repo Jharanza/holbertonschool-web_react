@@ -1,32 +1,31 @@
-import { getFullYear, getFooterCopy, getLatestNotification } from './utils';
+import { getFooterCopy, getFullYear, getLatestNotification } from "./utils";
 
-test('getFullYear function returns current year', () => {
-    const year = new Date().getFullYear().toString();
-    const functionYear = getFullYear();
+test('getFullYear returns current year', () => {
+    const currentYear = new Date().getFullYear().toString();
+    const fullYear = getFullYear();
 
-    expect(functionYear).toBe(year);
+    expect(fullYear).toBe(currentYear);
 });
 
-test('getFooterCopy function returns Holberton School if isIndex is true', () => {
+test('getFooterCopy returns "Holberton School" if parameter is true', () => {
     const isIndex = true;
-    const string = 'Holberton School';
-    const functionString = getFooterCopy(isIndex);
+    const msg = 'Holberton School';
+    const footerCopy = getFooterCopy(isIndex);
 
-    expect(functionString).toBe(string);
+    expect(footerCopy).toBe(msg);
 });
 
-test('getFooterCopy function returns Holberton School main dashboard if isIndex is false', () => {
+test('getFooterCopy returns "Holberton School main dashboard" if paramenter is false', () => {
     const isIndex = false;
-    const string = 'Holberton School main dashboard';
-    const functionString = getFooterCopy(isIndex);
+    const msg = 'Holberton School main dashboard';
+    const footerCopy = getFooterCopy(isIndex);
 
-    expect(functionString).toBe(string);
+    expect(footerCopy).toBe(msg);
 });
 
-test('getLatestNotification function returns <strong>Urgent requirement</strong> - complete by EOD', () => {
-    const string = '<strong>Urgent requirement</strong> - complete by EOD';
-    const functionHtml = getLatestNotification();
+test('getLastestNotification returns the mesage <strong>Urgent requirement</strong> - complete by EOD', () => {
+    const msg = '<strong>Urgent requirement</strong> - complete by EOD';
+    const latestNotification = getLatestNotification();
 
-    expect(functionHtml).toBe(string)
-})
-
+    expect(latestNotification).toBe(msg);
+});
