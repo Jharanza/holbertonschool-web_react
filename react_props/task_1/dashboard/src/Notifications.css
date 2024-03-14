@@ -1,0 +1,17 @@
+.Notifications {
+    border: 2px dotted red;
+    padding: 10px;
+}
+
+button img {
+    height: 10px;
+    width: 10px;
+}
+
+li[data-priority='urgent'] {
+    color: red;
+}
+
+li[data-priority='default'] {
+    color: blue;
+}
