@@ -8,8 +8,6 @@ const Notifications = () => {
 
     const clickBotton = () => console.log('Close button has been clicked');
 
-    let html = getLatestNotification()
-
     return (
         <div className='Notifications'>  
             <button 
@@ -33,7 +31,7 @@ const Notifications = () => {
             <ul>
                 <NotificationItem type='default' value='New course available'/>
                 <NotificationItem type='urgent' value='New resume available' />
-                <NotificationItem type='urgent' html={ html } />
+                <NotificationItem type='urgent' html={ getLatestNotification() } />
             </ul>
         </div>
     )
