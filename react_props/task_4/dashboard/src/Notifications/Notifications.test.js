@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 import Notifications from "./Notifications";
 import NotificationItem from "./NotificationItem";
 
-const wrapper = shallow(<Notifications />);
+const wrapper = shallow(<Notifications displayDrawer={ true } />);
 
 test('Notifications renders without crashing', () => {
     expect(wrapper.exists()).toBe(true);
@@ -26,4 +26,10 @@ test("Notifications renders the first NotificationItem with 'New course availabl
     expect(firstNotificationItem.props().type).toBe('default');
     expect(firstNotificationItem.props().value).toBe('New course available');
 });
+
+test('Notifications not renders the NotificationItem componenty if displayDrawer is false', () => {
+    const wrapper = shallow(<Notifications displayDrawer={ false } />);
+
+    expect(wrapper.find('.Notifications').exists()).toBe(false);
+})
 
