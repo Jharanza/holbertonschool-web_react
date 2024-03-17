@@ -6,7 +6,7 @@ import { getLatestNotification } from '../utils';
 import NotificationItem from './NotificationItem';
 
 
-const Notifications = ({ displayDrawer }) => {
+const Notifications = ({ displayDrawer, listNotifications }) => {
 
     const clickBotton = () => console.log('Close button has been clicked');
 
@@ -38,9 +38,17 @@ const Notifications = ({ displayDrawer }) => {
               </button>
               <p>Here is the list of notifications</p>
               <ul>
-                <NotificationItem type='default' value='New course available' />
-                <NotificationItem type='urgent' value='New resume available' />
-                <NotificationItem type='urgent' html={getLatestNotification()} />
+                { listNotifications.length === 0 && (
+                  <p>No new notification for now</p>
+                )}
+                { listNotifications.map(((notification) => 
+                  <NotificationItem 
+                    key={ notification.id }
+                    type={ notification.type }
+                    value={ notification.value }
+                    html={ notification.html }
+                  />
+                ))}
               </ul>
             </div>
           </>
