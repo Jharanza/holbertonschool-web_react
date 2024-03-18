@@ -9,9 +9,9 @@ describe('Course list component', () => {
         shallow(<CourseList />)
     });
 
-    it ('renders 5 CourseListRows', () => {
+    it ('renders 3 CourseListRows', () => {
         const wrapper = shallow(<CourseList />);
 
-        expect(wrapper.find(CourseListRow)).toHaveLength(5);
+        expect(wrapper.find(CourseListRow)).toHaveLength(3);
     });
 });
