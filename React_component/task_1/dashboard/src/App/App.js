@@ -1,6 +1,5 @@
 import './App.css';
 import { Component } from 'react';
-import PropTypes from 'prop-types';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Login from '../Login/Login';
@@ -38,7 +37,7 @@ class App extends Component {
 
   handleKeyDown(event) {
     if (event.ctrlKey && event.key === 'h') {
-      alert('Logging you out'); 
+      alert('Logging you out');
       if (this.props.logOut) this.props.logOut();
     }
   }
@@ -61,10 +60,6 @@ class App extends Component {
     </>
     )
   };
-}
-
-App.propTypes = {
-  logOut: PropTypes.func
 }
 
 App.defaultProps = {

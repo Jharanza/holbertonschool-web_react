@@ -1,29 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Notifications.css'
 import close  from '../close.png'
 import NotificationItem from './NotificationItem';
 
 
-class Notifications extends Component {
+const Notifications = ({ displayDrawer, listNotifications }) => {
 
-  constructor (props) {
-    super(props);
-    this.listNotifications = props.listNotifications;
-    this.state = {}
-  }
+    const clickBotton = () => console.log('Close button has been clicked');
 
-  clickBotton = () => console.log('Close button has been clicked');
-
-  markAsRead() {
-    console.log(`Notification ${id} has been marked as read`)
-  }
-
-  render() {
     return (
         <>
         <div className='menuItem'>Your notifications</div>
-        {this.props.displayDrawer && ( // Conditional rendering based on displayDrawer
+        {displayDrawer && ( // Conditional rendering based on displayDrawer
           <>
             
             <div className='Notifications'> {/* Only rendered when displayDrawer is true */}
@@ -42,7 +31,7 @@ class Notifications extends Component {
                   backgroundColor: 'white',
                   border: 'none',
                 }}
-                onClick={this.clickBotton}
+                onClick={clickBotton}
               >
                 <img src={close} alt='close'></img>
               </button>
@@ -53,11 +42,10 @@ class Notifications extends Component {
                 )}
                 { listNotifications.map(((notification) => 
                   <NotificationItem 
-                    id={ notification.id }
+                    key={ notification.id }
                     type={ notification.type }
                     value={ notification.value }
                     html={ notification.html }
-                    onMarkAsRead={this.markAsRead}
                   />
                 ))}
               </ul>
@@ -66,7 +54,6 @@ class Notifications extends Component {
         )}
       </>
     )
-    }
 }
 
 Notifications.propTypes = {
