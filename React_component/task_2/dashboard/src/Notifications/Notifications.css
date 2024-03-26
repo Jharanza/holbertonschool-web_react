@@ -1,0 +1,27 @@
+.Notifications {
+    position: absolute;
+    right: 15px;
+    top: 50px;
+    border: 2px dotted red;
+    padding: 10px;
+    width: 40%;
+}
+
+.menuItem {
+    position: absolute;
+    right: 15px;
+    top: 30px;
+}
+
+button img {
+    height: 10px;
+    width: 10px;
+}
+
+li[data-notification-type='urgent'] {
+    color: red;
+}
+
+li[data-notification-type='default'] {
+    color: blue;
+}
