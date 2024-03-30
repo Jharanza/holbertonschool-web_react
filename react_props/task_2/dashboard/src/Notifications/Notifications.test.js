@@ -26,4 +26,3 @@ test("Notifications renders the first NotificationItem with 'New course availabl
     expect(firstNotificationItem.props().type).toBe('default');
     expect(firstNotificationItem.props().value).toBe('New course available');
 });
-
