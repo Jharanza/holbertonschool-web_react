@@ -1,10 +1,11 @@
 import React from "react";
+import logo from '../assets/HolbertonLogo.jpg';
 import './Header.css'
 
-const Header = () => {
+function Header() {
     return (
         <div className="App-header">
-            <img src={require('../HolbertonLogo.jpg')} className="App-logo" alt="logo" />
+            <img src={logo} className="App-logo" alt="logo" />
             <h1>School dashboard</h1>
         </div>
     )
