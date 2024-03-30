@@ -1,49 +1,45 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
     entry: './src/index.js',
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, '../dist')
+        path: path.resolve(__dirname, '../dist'),
+        filename: 'bundle.js'
     },
     module: {
-        rules : [
+        rules: [
             {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"]
             },
             {
-                test: /\.(png|jpg|jpeg|gif|svg)$/i,
-                use: [
+                test: /\.(gif|png|jpeg|jpg|svg)$/i,
+                use:[
                     'file-loader',
                     {
-                        loader: 'image-webpack-loader'
+                        loader: 'image-webpack-loader',
+                        options: {
+                            bypassOnDebug: true,
+                            disable: true
+                        }
                     }
                 ]
             },
             {
-                test: /\.(js|jsx)$/,
+                test: /\.(?:js|mjs|cjs)$/i,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env', '@babel/preset-react']
+                        presets: [
+                            ['@babel/preset-env', { targets: 'defaults'}]
+                        ]
                     }
                 }
-            }
+            },
         ]
     },
     devServer: {
-        static: path.join(__dirname, '../dist'),
-        compress: true
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-          template: './dist/index.html',
-          filename: 'index.html',
-        }),
-    ],
-    devtool: 'inline-source-map'
+        static: './dist'
+    }
 }
