@@ -1,14 +1,15 @@
 import React from 'react';
 import './Notifications.css'
-import close  from './close.png'
-import { getLatestNotification } from './utils';
+import close  from '../assets/close.png'
+import { getLatestNotification } from '../utils/utils';
 
-const Notifications = () => {
+export const Notifications = () => {
 
     const clickBotton = () => console.log('Close button has been clicked')
 
     return (
-        <div className='Notifications'>  
+        <div className='Notifications'>
+            
             <button 
                 aria-label='Close'
                 style={{
