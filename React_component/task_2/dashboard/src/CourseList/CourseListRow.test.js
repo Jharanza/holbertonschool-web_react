@@ -22,5 +22,5 @@ describe("CourseListRow component", () => {
 
         expect(wrapper.find('tr')).toHaveLength(1);
         expect(wrapper.find('td')).toHaveLength(2);
-    })
-})
+    });
+});

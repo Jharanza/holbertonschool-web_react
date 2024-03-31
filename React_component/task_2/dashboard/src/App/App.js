@@ -1,11 +1,11 @@
+import React, { Component } from 'react';
 import './App.css';
-import { Component } from 'react';
 import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 import Login from '../Login/Login';
-import Notifications from '../Notifications/Notifications';
+import Footer from '../Footer/Footer';
+import Notifications from '../Notifications/Notifications'
 import CourseList from '../CourseList/CourseList';
-import { getLatestNotification } from '../utils';
+import { getLatestNotification } from '../utils/utils';
 
 const listCourses = [
   { id: 1, name: 'ES6', credit: 60 },
@@ -45,21 +45,21 @@ class App extends Component {
   render() {
     return (
       <>
-    <Notifications listNotifications={ listNotifications }/>
-    <div className="App">
-      <Header />
-      {
-        this.props.isLoggedIn ? (
-          <CourseList listCourses={ listCourses }/>
-        ) : (
-          <Login />
-        )
-      }
-      <Footer />
-    </div>
-    </>
-    )
-  };
+      <Notifications listNotifications={ listNotifications }/>
+      <div className="App">
+        <Header />
+        {
+          this.props.isLoggedIn ? (
+            <CourseList listCourses={ listCourses }/>
+          ) : (
+            <Login />
+          )
+        }
+        <Footer />
+      </div>
+      </>
+    );
+  }
 }
 
 App.defaultProps = {

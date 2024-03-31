@@ -1,24 +1,26 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Notifications.css'
-import close  from '../close.png'
+import close  from '../assets/close.png'
 import NotificationItem from './NotificationItem';
 
+
 class Notifications extends Component {
-  constructor( props ) {
+
+  constructor(props) {
     super(props);
     this.clickBotton = this.clickBotton.bind(this);
-    this.markAsRead = this.markAsRead.bind(this);
+    this.markAsRead = this.markAsRead.bind(this)
   }
 
-  clickBotton(){
-    console.log('Close button has been clicked')
+  clickBotton(id) {
+    console.log(`Notification ${id} has been marked as read`)
   }
 
   markAsRead (id) {
     console.log(`Notification ${id} has been marked as read`)
   }
-    
+
   render() {
     const { displayDrawer, listNotifications } = this.props;
     return (
@@ -65,7 +67,7 @@ class Notifications extends Component {
           </>
         )}
       </>
-    )}
+  )}
 }
 
 Notifications.propTypes = {
@@ -73,8 +75,8 @@ Notifications.propTypes = {
 }
 
 Notifications.defaultProps = {
-    displayDrawer: false,
-    listNotifications: []
+  displayDrawer: false,
+  listNotifications: []
 }
 
 export default Notifications;
