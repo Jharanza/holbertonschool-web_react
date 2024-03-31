@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NotificationItem = ({ type, html, value}) => {
-    if (value) return <li data-notification-type={ type }>{ value }</li>;
-    else return <li data-notification-type={ type } dangerouslySetInnerHTML={{ __html: html }}></li>
+function NotificationItem({ type, html, value }) {
+    if (value ) return <li data-notification-type={ type }>{ value }</li>
+    else return <li data-notification-type={ type } dangerouslySetInnerHTML={{ __html: html }} ></li>
 }
 
 NotificationItem.propTypes = {

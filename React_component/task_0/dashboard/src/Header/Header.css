@@ -1,11 +1,6 @@
-.App-logo {
-    max-height: 30vmin;
-}
-  
-  
 .App-header {
     display: flex;
-    align-items: center;;
+    align-items: center;
     color: red;
     flex: 0 1 20%;
 }
