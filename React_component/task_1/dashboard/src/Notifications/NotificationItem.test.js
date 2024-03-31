@@ -16,7 +16,7 @@ test("NotificationItem renders correct HTML with types and value props", () => {
 });
 
 test("NotificationItem renders correct HTML with html prop", () => {
-    const html = { __html: 'test' };
+    const html = { __html: <u>test</u> };
     const wrapper = shallow(<NotificationItem type='urgent' html={ html } />);
 
     expect(wrapper.type()).toEqual('li');
