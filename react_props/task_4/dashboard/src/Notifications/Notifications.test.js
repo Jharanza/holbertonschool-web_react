@@ -32,4 +32,3 @@ test('Notifications not renders the NotificationItem componenty if displayDrawer
 
     expect(wrapper.find('.Notifications').exists()).toBe(false);
 })
-

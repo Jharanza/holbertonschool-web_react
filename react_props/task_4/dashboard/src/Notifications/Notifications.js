@@ -1,21 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Notifications.css'
-import close  from '../close.png'
-import { getLatestNotification } from '../utils';
+import close  from '../assets/close.png'
+import { getLatestNotification } from '../utils/utils';
 import NotificationItem from './NotificationItem';
+import PropTypes from 'prop-types';
 
+export const Notifications = ({ displayDrawer }) => {
 
-const Notifications = ({ displayDrawer }) => {
-
-    const clickBotton = () => console.log('Close button has been clicked');
+    const clickBotton = () => console.log('Close button has been clicked')
 
     return (
-        <>
+    <>
         <div className='menuItem'>Your notifications</div>
-        {displayDrawer && ( // Conditional rendering based on displayDrawer
+        {displayDrawer && (
           <>
-            
             <div className='Notifications'> {/* Only rendered when displayDrawer is true */}
               <button
                 aria-label='Close'
@@ -40,7 +38,7 @@ const Notifications = ({ displayDrawer }) => {
               <ul>
                 <NotificationItem type='default' value='New course available' />
                 <NotificationItem type='urgent' value='New resume available' />
-                <NotificationItem type='urgent' html={getLatestNotification()} />
+                <NotificationItem type='urgent' html={ getLatestNotification() } />
               </ul>
             </div>
           </>

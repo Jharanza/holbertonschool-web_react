@@ -34,4 +34,4 @@ test('App renders CourseList if isLoggedIn is true', () => {
     const wrapper = shallow(<App isLoggedIn={ true } />);
 
     expect(wrapper.contains(<CourseList />)).toBe(true)
-})
+});
