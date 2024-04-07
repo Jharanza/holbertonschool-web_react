@@ -1,0 +1,6 @@
+.App-header {
+    display: flex;
+    align-items: center;
+    color: red;
+    flex: 0 1 10%;
+}

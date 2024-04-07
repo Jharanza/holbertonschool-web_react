@@ -1,0 +1,52 @@
+#CourseList {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 65%;
+    padding: 5%;
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+    height: 500px;
+    width: 100%;
+}
+
+#CourseList thead {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#CourseList thead tr {
+    display: flex;
+    width: 100%;
+    border: 0.5px dotted gray;
+}
+
+#CourseList thead tr th {
+    display: flex;
+    flex: 0 1 100%;
+    left: 0px;
+    /* justify-content:flex-start; */
+}
+
+#CourseList thead tr th:last-child {
+    justify-content: center;
+}
+
+tbody {
+    border: 0.5px dotted gray;;
+}
+
+tbody tr {
+    display: flex;
+    width: 100%;
+}
+
+tbody tr td {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+tbody tr td:first-child {
+    justify-content: start;
+}
